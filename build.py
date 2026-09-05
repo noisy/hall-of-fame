@@ -41,7 +41,7 @@ ENTRIES = [
                   "knew the flags before I did. Verified the usage-limit "
                   "finding, and stopped me running a command live that would "
                   "have printed my email on stream.",
-         badge=None),
+         badge="badges/swisstourist-yolo.png"),
     dict(name="xFuroo", kind="arrival", stream="day 1", date="2026-08-22",
          title="day one",
          citation="Turned up on the first stream and stayed, back when nobody "
