@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hall of fame - noisy coder</title>
+<meta name="description" content="Viewers who changed the outcome of a noisy
+coder stream.">
+<style>
+:root { --bg:#070c12; --line:#1d2b39; --ink:#d3e7f2; --dim:#7f97a8;
+        --accent:#3fd8ff; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; color:var(--ink);
+  font:15px/1.6 ui-monospace,Menlo,Consolas,monospace;
+  background:
+    radial-gradient(1200px 700px at 12% -10%, rgba(74,31,122,.45), transparent 60%),
+    radial-gradient(900px 600px at 95% 8%, rgba(26,92,134,.40), transparent 60%),
+    var(--bg); }
+header { padding:44px 32px 6px; max-width:1180px; }
+h1 { margin:0; font-size:20px; font-weight:400; letter-spacing:.24em;
+     color:var(--accent); }
+.sub { color:var(--dim); font-size:12px; letter-spacing:.16em; }
+.lede { color:var(--dim); max-width:64ch; margin:20px 0 30px; }
+main { padding:0 32px 60px; max-width:1180px; }
+.grid { display:grid; gap:16px;
+        grid-template-columns:repeat(auto-fill,minmax(430px,1fr)); }
+.card { display:flex; gap:18px; padding:18px; border-radius:10px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(20,32,45,.82), rgba(12,20,29,.82)); }
+.badge { flex:0 0 auto; align-self:flex-start; }
+.card h2 { margin:2px 0 4px; font-size:18px; font-weight:400; letter-spacing:.05em; }
+.title { margin:0 0 8px; font-size:12.5px; letter-spacing:.14em;
+         text-transform:uppercase; }
+.citation { margin:0; font-size:13.5px; opacity:.93; }
+.meta { margin:10px 0 0; font-size:11px; letter-spacing:.1em;
+        display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.when { color:var(--dim); }
+.pending { color:var(--dim); border:1px solid var(--line); border-radius:4px;
+           padding:2px 7px; }
+footer { padding:0 32px 48px; max-width:70ch; color:var(--dim); font-size:12px; }
+footer a { color:var(--accent); }
+@media (max-width:520px) { .card { flex-direction:column; } }
+</style>
+</head><body>
+<header>
+  <h1>HALL OF FAME</h1>
+  <p class="sub">noisy coder &middot; people who helped</p>
+  <p class="lede">This channel is built live, out loud, with an audience. Now
+  and then someone in chat says the thing that unblocks the whole stream. This
+  is where those people go.</p>
+</header>
+<main><div class="grid">
+<article class="card">
+  <svg class="badge" viewBox="0 0 132 132" width="132"
+     height="132" role="img" aria-label="badge pending">
+  <defs><radialGradient id="g-swisstourist" cx="50%" cy="38%">
+    <stop offset="0" stop-color="#3fd8ff" stop-opacity=".30"/>
+    <stop offset="1" stop-color="#3fd8ff" stop-opacity="0"/>
+  </radialGradient></defs>
+  <circle cx="66.0" cy="66.0" r="63.0" fill="url(#g-swisstourist)"/>
+  <circle cx="66.0" cy="66.0" r="57.0" fill="none" stroke="#3fd8ff"
+          stroke-width="2" stroke-opacity=".85"/>
+  <circle cx="66.0" cy="66.0" r="48.0" fill="none" stroke="#3fd8ff"
+          stroke-width="1" stroke-opacity=".30" stroke-dasharray="3 7"/>
+  <text x="66.0" y="62.0" text-anchor="middle" fill="#3fd8ff"
+        font-family="ui-monospace,Menlo,monospace" font-size="27"
+        font-weight="700">Sw</text>
+  <text x="66.0" y="88.0" text-anchor="middle" fill="#3fd8ff"
+        font-family="ui-monospace,Menlo,monospace" font-size="15"
+        opacity=".8">-&gt;</text>
+</svg>
+  <div class="body">
+    <h2>SwissTourist</h2>
+    <p class="title" style="color:#3fd8ff">the codex whisperer</p>
+    <p class="citation">Worked out that Codex and Work share one usage limit, found the page that proves it, and fixed my channel URL while he was at it. Ninety-two messages, most of them useful.</p>
+    <p class="meta">
+      <span style="color:#3fd8ff">pointed the way</span>
+      <span class="when">day 6 &middot; 2026-09-05</span>
+      <span class="pending">badge in the works</span>
+    </p>
+  </div>
+</article>
+<article class="card">
+  <img class="badge" src="badges/xfuroo-day-one.png" width="132" height="132" alt="xFuroo badge">
+  <div class="body">
+    <h2>xFuroo</h2>
+    <p class="title" style="color:#b98cff">day one</p>
+    <p class="citation">Turned up on the first stream and stayed, back when nobody knew whether this channel would last a week.</p>
+    <p class="meta">
+      <span style="color:#b98cff">brought the room</span>
+      <span class="when">day 1 &middot; 2026-08-22</span>
+      
+    </p>
+  </div>
+</article>
+</div></main>
+<footer>
+  Every citation is something the person did in this channel's chat, in public.
+  Nobody is listed without being thanked on stream first.
+</footer>
+</body></html>
