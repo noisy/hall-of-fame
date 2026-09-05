@@ -49,7 +49,7 @@ ENTRIES = [
 ]
 
 
-def badge_art(entry, size=132):
+def badge_art(entry, size=210):
     """Real art when it exists, drawn geometry when it does not.
 
     The placeholder is deliberately plain so an un-made badge is obvious at a
@@ -119,12 +119,12 @@ h1 { margin:0; font-size:20px; font-weight:400; letter-spacing:.24em;
 .lede { color:var(--dim); max-width:64ch; margin:20px 0 30px; }
 main { padding:0 32px 60px; max-width:1180px; }
 .grid { display:grid; gap:16px;
-        grid-template-columns:repeat(auto-fill,minmax(430px,1fr)); }
-.card { display:flex; gap:18px; padding:18px; border-radius:10px;
+        grid-template-columns:repeat(auto-fill,minmax(540px,1fr)); }
+.card { display:flex; gap:22px; padding:20px; border-radius:10px;
   border:1px solid var(--line);
   background:linear-gradient(180deg, rgba(20,32,45,.82), rgba(12,20,29,.82)); }
 .badge { flex:0 0 auto; align-self:flex-start; }
-.card h2 { margin:2px 0 4px; font-size:18px; font-weight:400; letter-spacing:.05em; }
+.card h2 { margin:2px 0 5px; font-size:21px; font-weight:400; letter-spacing:.05em; }
 .title { margin:0 0 8px; font-size:12.5px; letter-spacing:.14em;
          text-transform:uppercase; }
 .citation { margin:0; font-size:13.5px; opacity:.93; }
