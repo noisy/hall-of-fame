@@ -37,9 +37,10 @@ KINDS = {
 ENTRIES = [
     dict(name="SwissTourist", kind="pointer", stream="day 6", date="2026-09-05",
          title="the codex whisperer",
-         citation="Worked out that Codex and Work share one usage limit, found "
-                  "the page that proves it, and fixed my channel URL while he "
-                  "was at it. Ninety-two messages, most of them useful.",
+         citation="Runs Codex as Claude's supervisor and has since March, so he "
+                  "knew the flags before I did. Verified the usage-limit "
+                  "finding, and stopped me running a command live that would "
+                  "have printed my email on stream.",
          badge=None),
     dict(name="xFuroo", kind="arrival", stream="day 1", date="2026-08-22",
          title="day one",
