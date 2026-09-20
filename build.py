@@ -33,9 +33,19 @@ KINDS = {
     "words": ("gave it words", '""', "#ffb454"),
     "arrival": ("brought the room", "<>", "#b98cff"),
     "support": ("backed it first", "*", "#5be3a5"),
+    "probe": ("tried the locks", "?!", "#ff8ad4"),
 }
 
 ENTRIES = [
+    dict(name="WootDragon", kind="probe", stream="day 12", date="2026-09-20",
+         title="more RI than AI",
+         citation="Spent two whole streams trying to talk the chat agent into "
+                  "breaking its own rules - around forty attempts across day 11 "
+                  "and day 12, every shape of it, and not one of them worked. "
+                  "Announced \"i have successfully broken the ai\" while "
+                  "everything carried on working normally. Security-minded "
+                  "rather than merely mischievous, and cheerful about losing.",
+         badge="badges/wootdragon-ri.png"),
     dict(name="keukenconcurrent", kind="support", stream="day 12",
          date="2026-09-20", title="the first sub",
          citation="The first person ever to pay for a subscription to this "

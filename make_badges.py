@@ -120,6 +120,30 @@ PEOPLE["keukenconcurrent"] = {
         "cyan line art."),
 }
 
+# Two streams of prompt-injection attempts against the chat agent, none of
+# which worked, and he laughed at every failure. The badge is a PERSISTENCE
+# award, not a warning label: he is a regular who stress-tests the thing for
+# free and is cheerful about losing. Nothing here names a technique - a public
+# page thanking someone is not the place for a how-to.
+PEOPLE["wootdragon"] = {
+    "1-score": (
+        "In the centre, in very large clean monospace: '40 : 0'. Curved along "
+        "the top edge, smaller: 'WOOTDRAGON'. Along the bottom edge, smaller "
+        "still: 'ATTEMPTS TO SCORES'. Above the centre text, a small icon of a "
+        "shield with a tiny crack that does not go through it."),
+    "2-ri": (
+        "In the centre, in very large clean monospace capitals: 'R I'. Curved "
+        "along the top edge, smaller: 'WOOTDRAGON'. Along the bottom edge, "
+        "smaller still: 'NOT ARTIFICIAL, REAL'. Above the centre text, a small "
+        "icon of a lightbulb drawn in thin line art."),
+    "3-red-team": (
+        "In the centre, in large clean monospace capitals across two lines: "
+        "'THE RED' then 'TEAM'. Curved along the top edge, smaller: "
+        "'WOOTDRAGON'. Along the bottom edge, smaller still: 'UNPAID AND "
+        "RELENTLESS'. Above the centre text, a small icon of a shield crossed "
+        "by a wrench, thin line art."),
+}
+
 WHITE_SPREAD = 26        # max channel spread for "this is the white plate"
 WHITE_FLOOR = 150        # and it has to be bright
 RING_ALLOWANCE = 14      # the cyan rim sits outside the dark interior
