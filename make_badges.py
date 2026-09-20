@@ -12,8 +12,9 @@ Two lessons from xFuroo's badge are baked in:
   fail, and naming the words explicitly is what got three correct lines first
   try last time.
 
-    python3 make_badges.py            # all five
-    python3 make_badges.py 1 4        # just those
+    python3 make_badges.py                      # swisstourist, all of them
+    python3 make_badges.py keukenconcurrent     # another person
+    python3 make_badges.py keukenconcurrent 1   # just one idea
 """
 import importlib.util
 import os
@@ -36,8 +37,11 @@ STYLE = (
     "written."
 )
 
-# Each is one idea. A badge holds about three words; anything more is a
-# certificate. Lines are his own, from what he said in chat tonight.
+# One dict per person, keyed the way build.py keys entries. Each value is a set
+# of ideas for that person: a badge holds about three words, anything more is a
+# certificate, and every line comes from what they actually said or did.
+PEOPLE = {}
+
 CANDIDATES = {
     "1-supervisor": (
         "In the centre, in large clean monospace capitals: 'CLAUDE'S "
@@ -68,6 +72,52 @@ CANDIDATES = {
         "'SWISSTOURIST'. Along the bottom edge, smaller still: 'CAUGHT IT "
         "BEFORE IT WENT LIVE'. Above the centre text, a small icon of a shield "
         "with an envelope inside it."),
+}
+
+PEOPLE["swisstourist"] = CANDIDATES
+
+# First paid subscriber, stream day 12. The badge is built around the broken
+# link rather than the money: an epithet has to be something they DID, and
+# "found the dead link on the way in" is both true and a better story. Name is
+# lowercase because that is how they write it on their own channel page.
+PEOPLE["keukenconcurrent"] = {
+    # The badge is about the subscription: first person ever to pay for this
+    # channel, on day 12. The broken link they also caught moves to the
+    # citation, where it reads as evidence rather than as the headline.
+    "4-first-sub": (
+        "In the centre, in large clean monospace capitals across two lines: "
+        "'THE FIRST' then 'SUB'. Curved along the top edge, smaller: "
+        "'KEUKENCONCURRENT'. Along the bottom edge, smaller still: 'DAY TWELVE, "
+        "2026'. Above the centre text, a small icon of a single star drawn in "
+        "thin glowing line art."),
+    "5-sub-one": (
+        "In the centre, in very large clean monospace: '#1'. Curved along the "
+        "top edge, smaller: 'KEUKENCONCURRENT'. Along the bottom edge, smaller "
+        "still: 'FIRST EVER SUBSCRIBER'. Above the centre text, a small icon of "
+        "a heart drawn in thin glowing line art."),
+    "6-paid-first": (
+        "In the centre, in large clean monospace capitals across two lines: "
+        "'PAID' then 'FIRST'. Curved along the top edge, smaller: "
+        "'KEUKENCONCURRENT'. Along the bottom edge, smaller still: 'BEFORE "
+        "ANYONE ELSE DID'. Above the centre text, a small icon of a star inside "
+        "a circle, thin line art."),
+    "1-dead-link": (
+        "In the centre, in large clean monospace capitals across two lines: "
+        "'THE DEAD' then 'LINK'. Curved along the top edge, smaller: "
+        "'KEUKENCONCURRENT'. Along the bottom edge, smaller still: 'FOUND IT ON "
+        "THE WAY IN'. Above the centre text, a small icon of a broken chain "
+        "link with a gap between its two halves."),
+    "2-404": (
+        "In the centre, in very large clean monospace: '404'. Curved along the "
+        "top edge, smaller: 'KEUKENCONCURRENT'. Along the bottom edge, smaller "
+        "still: 'SPOTTED IT FIRST'. Above the centre text, a small icon of a "
+        "magnifying glass over a broken chain link."),
+    "3-two-dips": (
+        "In the centre, in large clean monospace capitals across two lines: "
+        "'TWO DIPS' then 'TEN PUSHUPS'. Curved along the top edge, smaller: "
+        "'KEUKENCONCURRENT'. Along the bottom edge, smaller still: 'GL WITH "
+        "THAT'. Above the centre text, a small icon of a dumbbell drawn in thin "
+        "cyan line art."),
 }
 
 WHITE_SPREAD = 26        # max channel spread for "this is the white plate"
@@ -111,19 +161,22 @@ def cut_to_disc(path):
 
 
 def main():
-    wanted = sys.argv[1:]
-    os.makedirs(OUT, exist_ok=True)
+    args = sys.argv[1:]
+    person = args[0] if args and args[0] in PEOPLE else "swisstourist"
+    wanted = [a for a in args if a != person]
+    out = os.path.join(HERE, "badges", f"{person}-drafts")
+    os.makedirs(out, exist_ok=True)
     m = fal()
-    for slug, idea in CANDIDATES.items():
+    for slug, idea in PEOPLE[person].items():
         if wanted and not any(slug.startswith(w) for w in wanted):
             continue
         status, result = m.submit(m.PLATE_MODEL, {
             "prompt": f"{idea} {STYLE}", "aspect_ratio": "1:1",
             "resolution": "2K", "output_format": "png"})
-        paths = m.save_images(m.await_result(status, result), OUT, slug)
+        paths = m.save_images(m.await_result(status, result), out, slug)
         for path in paths:
             cut_to_disc(path)
-    print("\ndrafts in", OUT)
+    print("\ndrafts in", out)
 
 
 if __name__ == "__main__":

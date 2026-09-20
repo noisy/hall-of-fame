@@ -32,9 +32,19 @@ KINDS = {
     "bug": ("found the crack", "!!", "#ff5f6b"),
     "words": ("gave it words", '""', "#ffb454"),
     "arrival": ("brought the room", "<>", "#b98cff"),
+    "support": ("backed it first", "*", "#5be3a5"),
 }
 
 ENTRIES = [
+    dict(name="keukenconcurrent", kind="support", stream="day 12",
+         date="2026-09-20", title="the first sub",
+         citation="The first person ever to pay for a subscription to this "
+                  "channel. Turned up, sent a first message, followed, "
+                  "subscribed on YouTube and subscribed here, all inside an "
+                  "hour - and still found time to spot that the YouTube link in "
+                  "the Twitch panel pointed at a dead channel, a 404 nobody had "
+                  "noticed for weeks.",
+         badge="badges/keukenconcurrent-first-sub.png"),
     dict(name="SwissTourist", kind="pointer", stream="day 6", date="2026-09-05",
          title="the codex whisperer",
          citation="Runs Codex as Claude's supervisor and has since March, so he "
